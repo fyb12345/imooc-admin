@@ -10,6 +10,7 @@ module.exports = {
   },
   // ESLint 中基础配置需要继承的配置
   extends: ['plugin:vue/vue3-essential', '@vue/standard'],
+  parser: 'vue-eslint-parser',
   // 解析器
   parserOptions: {
     parser: 'babel-eslint'

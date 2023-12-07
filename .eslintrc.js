@@ -15,7 +15,7 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint'
   },
-  // 需要修改的启用规则及其各自的错误级别
+  // 启用的规则及其各自的错误级别
   /**
    * 错误级别分为三种：
    * "off" 或 0 - 关闭规则
@@ -25,7 +25,9 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'space-before-function-paren': 'off'
+    'space-before-function-paren': 'off',
+    'no-unused-expressions': 'off',
+    'no-trailing-spaces': 'off',
+    'eol-last': 'off'
   }
 }
-

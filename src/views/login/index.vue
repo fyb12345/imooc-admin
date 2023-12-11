@@ -95,8 +95,7 @@ const submitForm = () => {
       loading.value = false
       // 登录后操作
       router.push('/')
-    }).catch((err) => {
-      console.log(err)
+    }).catch(() => {
       loading.value = true
     })
   })

@@ -1,4 +1,6 @@
 <script setup>
+import Hamburger from '@/components/Hamburger'
+import Breadcrumb from '@/components/Breadcrumb'
 import { useStore } from 'vuex'
 
 const store = useStore()
@@ -9,6 +11,8 @@ const logout = () => {
 
 <template>
   <div class="navbar">
+    <hamburger class="hamburger-container" />
+    <breadcrumb class="breadcrumb-container" />
     <div class="right-menu">
       <!-- 头像 -->
       <el-dropdown class="avatar-container" trigger="click">
@@ -66,5 +70,23 @@ const logout = () => {
       }
     }
   }
+
+  .hamburger-container {
+    line-height: 46px;
+    height: 100%;
+    float: left;
+    cursor: pointer;
+    // hover 动画
+    transition: background 0.5s;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .breadcrumb-container {
+    float: left;
+  }
+
 }
 </style>

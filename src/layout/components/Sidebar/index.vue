@@ -13,7 +13,7 @@ const logoHeight = 44
         src="https://m.imooc.com/static/wap/static/common/img/logo-small@2x.png"
       />
       <h1 class="logo-title" v-if="$store.getters.sidebarOpened">
-        imooc-admin
+        {{ $t('msg.test') }}
       </h1>
     </div>
     <el-scrollbar>

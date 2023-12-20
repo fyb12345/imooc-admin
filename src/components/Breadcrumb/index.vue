@@ -2,6 +2,7 @@
 import { ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useStore } from 'vuex'
+import { generateTitle } from '@/utils/i18n'
 
 const route = useRoute()
 
@@ -34,8 +35,8 @@ const linkHoverColor = ref(store.getters.cssVar.menuBg)
   <el-breadcrumb class="breadcrumb" separator="/">
     <transition-group name="breadcrumb">
       <el-breadcrumb-item v-for="(item,index) in breadcrumbData" :key="item.path">
-        <span class="no-redirect" v-if="breadcrumbData.length-1===index">{{ item.meta.title }}</span>
-        <span class="redirect" v-else @click.prevent="onLinkClick(item)">{{ item.meta.title }}</span>
+        <span class="no-redirect" v-if="breadcrumbData.length-1===index">{{ generateTitle(item.meta.title) }}</span>
+        <span class="redirect" v-else @click.prevent="onLinkClick(item)">{{ generateTitle(item.meta.title) }}</span>
       </el-breadcrumb-item>
     </transition-group>
   </el-breadcrumb>
